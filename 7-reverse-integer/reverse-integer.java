@@ -11,26 +11,26 @@ class Solution {
         // }
         // return (int)sum;
 
-            // String a = Math.abs(x) + "";
-            // long rev = 0;
-            // for (int i = a.length() - 1; i >= 0; i--) {
-            //     int ld = x % 10;
-            //     int num = (int) Math.pow(10, i);
-            //     rev += num * ld;
-            //     x /= 10;
-            // }
-            //  if ((rev <= Integer.MAX_VALUE) && (rev >= Integer.MIN_VALUE)){
-            //     return (int)rev;
-            //  }
-            // return 0;
+        // String a = Math.abs(x) + "";
+        // long rev = 0;
+        // for (int i = a.length() - 1; i >= 0; i--) {
+        //     int ld = x % 10;
+        //     int num = (int) Math.pow(10, i);
+        //     rev += num * ld;
+        //     x /= 10;
+        // }
+        //  if ((rev <= Integer.MAX_VALUE) && (rev >= Integer.MIN_VALUE)){
+        //     return (int)rev;
+        //  }
+        // return 0;
 
-            String a = Math.abs((long)x) + ""; // use long to avoid overflow on abs
+        String a = Math.abs(x) + ""; // use long to avoid overflow on abs
         long rev = 0;
 
-        long temp = Math.abs((long)x); // work with positive number
+        long temp = Math.abs((long) x); // work with positive number
         for (int i = a.length() - 1; i >= 0; i--) {
-            int ld = (int)(temp % 10); // extract last digit
-            long num = (long)Math.pow(10, i); // place value
+            int ld = (int) (temp % 10); // extract last digit
+            long num = (long) Math.pow(10, i); // place value
             rev += num * ld;
             temp /= 10;
         }
@@ -42,7 +42,7 @@ class Solution {
 
         // check if within int range
         if (rev >= Integer.MIN_VALUE && rev <= Integer.MAX_VALUE) {
-            return (int)rev;
+            return (int) rev;
         }
         return 0;
     }
